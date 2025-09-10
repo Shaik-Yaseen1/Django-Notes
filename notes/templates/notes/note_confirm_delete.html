@@ -1,0 +1,10 @@
+{% extends 'notes/base.html' %}
+{% block content %}
+  <h2>Delete note</h2>
+  <p>Are you sure you want to delete "{{ object }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button class="btn btn-danger" type="submit">Delete</button>
+    <a class="btn btn-secondary" href="{{ object.get_absolute_url }}">Cancel</a>
+  </form>
+{% endblock %}
